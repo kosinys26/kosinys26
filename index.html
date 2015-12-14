@@ -5,8 +5,20 @@
     <title></title>
 </head>
 <body>
+<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+<a href="javascript:VK.Auth.login(authInfo);">VK</a>
+
 <script language="javascript">
-alert('Hello');
-    </script>
+    VK.init({
+        apiId: 5187107
+    });
+    function authInfo(response) {
+        if (response.session) {
+            alert('user: '+response.session.mid);
+        } else {
+            alert('not auth');
+        }
+    }
+</script>
 </body>
 </html>
