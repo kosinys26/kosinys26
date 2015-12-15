@@ -26,7 +26,7 @@
     VK.UI.button('login_button');
      VK.Api.call('friends.get', {order: 'random', fields: "first_name, last_name"  }, function(r) {
          for (var i =0; i < r.response.count; i++){
-         $('#friends_info').html(r.response[i].first_name+' '+r.response[i].last_name +"<br>");
+         $('#friends_info').append(r.response[i].first_name+' '+r.response[i].last_name +"<br>");
         $('#friends_info').append('user_id: '+ r.response[i].id+"<br"); }});
 </script>
 </body>
