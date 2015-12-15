@@ -26,9 +26,12 @@
     VK.Auth.getLoginStatus(authInfo);
     VK.UI.button('login_button');
      VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name, photo_100"  }, function(r) {
-        $('#friends_info').append(r.response[0].first_name+' '+r.response[0].last_name+"<br");
-        $('#friends_info').wrap($("<a>").attr("href", "https://vk.com/id"+r.response[0].uid ));
-        $("#friends_img").append($("<img>").attr("src", r.response[0].photo_100));
+         for(i=0;c<data.response.length;i++){
+             console.log(i);
+        $('#friends_info').append(r.response[i].first_name+' '+r.response[i].last_name+"<br");
+        $('#friends_info').wrap($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
+        $("#friends_img").append($("<img>").attr("src", r.response[i].photo_100));
+         }
        });
 </script>
 </body>
