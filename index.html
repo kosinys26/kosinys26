@@ -18,7 +18,7 @@
 
     function authInfo(response) {
         if (response.session) {
-            alert('user: '+response.session.mid);
+            //alert('user: '+response.session.mid);
         } else {
             alert('not auth');
         }
@@ -26,7 +26,7 @@
     VK.Auth.getLoginStatus(authInfo);
     VK.UI.button('login_button');
      VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name, photo_100"  }, function(r) {
-         for(i=0;c<data.response.length;i++){
+         for(i=0;i<data.response.length;i++){
              console.log(i);
         $('#friends_info').append(r.response[i].first_name+' '+r.response[i].last_name+"<br");
         $('#friends_info').wrap($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
