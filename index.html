@@ -23,7 +23,7 @@
     }
 VK.Auth.getLoginStatus(authInfo);
 VK.UI.button('login_button');
-VK.Api.call('friends.get', { fields : first_name, last_name}, function(data){
+VK.Api.call('friends.get', { fields : 'first_name', 'last_name'}, function(data){
 
 for (var i = 0; i < r.response.count; i++)
 {
