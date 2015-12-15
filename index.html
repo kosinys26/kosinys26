@@ -24,12 +24,12 @@
     //VK.Auth.getLoginStatus(authInfo);
     VK.UI.button('login_button');
     VK.Api.call('friends.get', { fields : 'first_name, last_name'}, function(data){
-        if (data.response) {
-            for (var i = 0; i < data.response.count; i++) {
-                $("#friends_info").html(data.response.items[i].first_name + data.response.items[i].last_name)
-            }
-        }
-        else {alert("Error");}
+       // if (data.response) {
+           // for (var i = 0; i < data.response.count; i++) {
+                $("#friends_info").html(data.response.items[0].first_name + data.response.items[0].last_name)
+           // }
+        //}
+        //else {alert("Error");}
     });
 </script>
 </body>
