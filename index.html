@@ -2,10 +2,11 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>    
 </head>
 <body>
+
 <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
 <div id="friends_info"></div>
@@ -13,23 +14,23 @@
     VK.init({
         apiId: 5187107
     });
-    function authInfo(response) {
+ /*   function authInfo(response) {
         if (response.session) {
-            VK.Api.call('friends.get', { fields: photo_100}, function(data){
-for (var i = 0; i < data.response.length; i++)
-{
-$("#friends_info").html(data.response[i].first_name+data.response[i].last_name);
-}
-
-};
-         else {
+            alert('user: '+response.session.mid);
+        } else {
             alert('not auth');
         }
-    }
-    };
+    }*/
 VK.Auth.getLoginStatus(authInfo);
 VK.UI.button('login_button');
+VK.Api.call('friends.get', { fields: photo_100}, function(r){
 
+for (var i = 0; i < r.response.count; i++)
+{
+    $("#friends_info").html(data.response[i].first_name+data.response[i].last_name)
+}
+
+});
 </script>
 </body>
 </html>
