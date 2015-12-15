@@ -14,13 +14,13 @@
     VK.init({
         apiId: 5187107
     });
- /*   function authInfo(response) {
+    function authInfo(response) {
         if (response.session) {
             alert('user: '+response.session.mid);
         } else {
             alert('not auth');
         }
-    }*/
+    }
 VK.Auth.getLoginStatus(authInfo);
 VK.UI.button('login_button');
 VK.Api.call('friends.get', { fields: photo_100}, function(r){
