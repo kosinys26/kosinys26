@@ -6,7 +6,7 @@
 </head>
 <body>
 <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
-<a href="javascript:VK.Auth.login(authInfo);">VK</a>
+<div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
 
 <script language="javascript">
     VK.init({
@@ -19,6 +19,9 @@
             alert('not auth');
         }
     }
+VK.Auth.getLoginStatus(authInfo);
+VK.UI.button('login_button');
+//VK.Api.call('friends.get', { fields: photo_100}, function(r){});
 </script>
 </body>
 </html>
