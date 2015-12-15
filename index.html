@@ -27,7 +27,7 @@ VK.Api.call('friends.get', { fields : first_name, last_name}, function(data){
 
 for (var i = 0; i < r.response.count; i++)
 {
-    $("#friends_info").html(data.response[i].first_name+data.response[i].last_name)
+    $("#friends_info").html(data.response.items[i].first_name+data.response.items[i].last_name)
 }
 
 });
