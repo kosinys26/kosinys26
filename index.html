@@ -30,7 +30,7 @@
 
             $('.friends_info').append(r.response[i].first_name+' '+r.response[i].last_name+"<br>");
             $('.friends_info').wrap($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
-            $(".friends_info").append($("<img>").attr("src", r.response[i].photo_100));
+            $(".friends_img").append($("<img>").attr("src", r.response[i].photo_100));
          }
        });
 </script>
