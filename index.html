@@ -25,6 +25,7 @@
     VK.Auth.getLoginStatus(authInfo);
     VK.UI.button('login_button');
      VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name"  }, function(r) {
+                 $("#friends_info").append($("<a>").attr("href", r.response[0].photo_100));
          $('#friends_info').append(r.response[0].first_name+' '+r.response[0].last_name +' '+ r.response[0].uid+"<br>");
        // $('#friends_info').append('user_id: '+ r.response[0].id+"<br");
        });
