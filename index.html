@@ -21,7 +21,10 @@
     }
 VK.Auth.getLoginStatus(authInfo);
 VK.UI.button('login_button');
-//VK.Api.call('friends.get', { fields: photo_100}, function(r){});
+VK.Api.call('friends.get', { fields: photo_100}, function(r){
+if(r.response){
+alert('Working')}
+else{alert('Not working')};
 </script>
 </body>
 </html>
