@@ -9,8 +9,8 @@
 
 <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
-<div class="friends_info"></div>
-<div class="friends_link">VK</div>
+<div class="friends_info"><div class="friends_link">VK</div></div>
+
 <div class="friends_img"> </div> 
 <script language="javascript">
     VK.init({
@@ -30,7 +30,7 @@
          for(i=0;i<r.response.length;i++){
 
             $('.friends_info').append("<br>"+r.response[i].first_name+' '+r.response[i].last_name+"<br>");
-            $('.friends_link').append($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
+            $('.friends_link').html($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
             $(".friends_info").append($("<img>").attr("src", r.response[i].photo_100));
          }
        });
