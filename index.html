@@ -29,7 +29,7 @@
         for(i=0;i<r.response.length;i++){
             var span = 'n'+i;
             var spanID = "#"+span;
-            $('#friends_info').append($("<span>").attr("id", spanID ));
+            $('#friends_info').append($("<span>").attr("id", span ));
             $(spanID).append("<br>"+r.response[i].first_name+' '+r.response[i].last_name+"<br>");
             $(spanID).wrap($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
             $("#friends_info").append($("<img>").attr("src", r.response[i].photo_100));
