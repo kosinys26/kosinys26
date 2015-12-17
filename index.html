@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -11,12 +11,11 @@
 <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
 <div class="friends_info"><div class="friends_link">VK</div></div>
 
-<div class="friends_img"> </div> 
+<div class="friends_img"> </div>
 <script language="javascript">
     VK.init({
         apiId: 5187107
     });
-
     function authInfo(response) {
         if (response.session) {
             //alert('user: '+response.session.mid);
@@ -26,14 +25,13 @@
     }
     VK.Auth.getLoginStatus(authInfo);
     VK.UI.button('login_button');
-     VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name, photo_100"  }, function(r) {
-         for(i=0;i<r.response.length;i++){
-
-            $('.friends_info').append("<br>"+r.response[i].first_name+' '+r.response[i].last_name+"<br>");
-            $('.friends_link').html($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
+    VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name, photo_100"  }, function(r) {
+        for(i=0;i<r.response.length;i++){
+            $('.friends_info').append("<span id=i>"+"<br>"+r.response[i].first_name+' '+r.response[i].last_name+"</span>"+"<br>");
+            $('#i').append($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
             $(".friends_info").append($("<img>").attr("src", r.response[i].photo_100));
-         }
-       });
+        }
+    });
 </script>
 </body>
 </html>
