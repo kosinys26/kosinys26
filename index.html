@@ -27,7 +27,8 @@
     VK.UI.button('login_button');
     VK.Api.call('friends.get', {order: 'random', fields: "id, first_name, last_name, photo_100"  }, function(r) {
         for(i=0;i<r.response.length;i++){
-            var spanID = "#n"+i;
+            var span = 'n'+i;
+            var spanID = "#"+span;
             $('#friends_info').append($("<span>").attr("id", spanID ));
             $(spanID).append("<br>"+r.response[i].first_name+' '+r.response[i].last_name+"<br>");
             $(spanID).wrap($("<a>").attr("href", "https://vk.com/id"+r.response[i].uid ));
@@ -37,3 +38,4 @@
 </script>
 </body>
 </html>
+
